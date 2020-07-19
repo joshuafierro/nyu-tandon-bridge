@@ -17,6 +17,7 @@ void calculateCoinAmount(int dollars, int cents){
     totalCents -= nickels * 5;
     pennies = totalCents; 
 
+    cout << dollars << " dollars and " << cents << " cents are:" <<endl; 
     cout << quarters << " quarters " << dimes << " dimes " << nickels << 
     " nickels " << pennies << " pennies " <<endl; 
 }
