@@ -6,7 +6,10 @@ using namespace std;
 void calculateTotalMoney(int quarters, int dimes, int nickels, int pennies){
     double total = 0;
     const double dollar = 100;
-    total = ((quarters * 25) + (dimes * 10) + (nickels * 5) + (pennies)) / dollar;
+    const int quartersInDollar = 25;
+    const int dimesInDollar = 10;
+    const int nickelsInDollar = 5;
+    total = ((quarters * quartersInDollar) + (dimes * dimesInDollar) + (nickels * nickelsInDollar) + (pennies)) / dollar;
     cout <<"Your total balance is: " << total <<endl;
 }
 
