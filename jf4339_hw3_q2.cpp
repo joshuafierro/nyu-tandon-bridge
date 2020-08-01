@@ -25,7 +25,6 @@ int main() {
     case FRESHMAN:
         cout<< userName << ", you are a Freshman." <<endl;
         break;
-
     case SOPHMORE:
         cout<< userName << ", you are a Sophmore." <<endl;
         break;

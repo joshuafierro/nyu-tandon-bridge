@@ -29,7 +29,7 @@ int main() {
     else if(bmiRange >= 25 && bmiRange <= 30) {
         weightStatus = "Overweight";
     }
-    else{
+    else {
         weightStatus = "Obese";
     }
 

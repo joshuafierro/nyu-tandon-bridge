@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <cmath>
 using namespace std;
 
 int main() {
@@ -11,24 +10,46 @@ int main() {
     int userInput;
     double usersRationalNumber;
 
-    cout<< "Please enter a Real number: "<<endl;
+    cout<< "Please enter a Real number: " <<endl;
     cin>> usersRationalNumber;
-    cout<< "Choose your rounding method:"<<endl;
-    cout<< "1. Floor Round"<<endl;
-    cout<< "2. Ceiling Round"<<endl;
-    cout<< "3. Round to the nearest whole number"<<endl;
+    cout<< "Choose your rounding method:" <<endl;
+    cout<< "1. Floor Round" <<endl;
+    cout<< "2. Ceiling Round" <<endl;
+    cout<< "3. Round to the nearest whole number" <<endl;
     cin>> userInput;
 
-    switch (userInput)
-    {
+    switch (userInput) {
     case FLOOR_ROUND:
-        cout<<floor(usersRationalNumber)<<endl;
+        if (usersRationalNumber < 0) {
+            cout<< int(usersRationalNumber) - 1 <<endl;
+        } 
+        else {
+          cout<< int(usersRationalNumber) <<endl;  
+        }
         break;
     case CEILING_ROUND:
-        cout<<ceil(usersRationalNumber)<<endl;
+        if(usersRationalNumber < 0) {
+            cout<< int(usersRationalNumber) <<endl;
+        }
+        else {
+            cout<< int(usersRationalNumber) + 1 <<endl;
+        }
         break;
     case ROUND:
-        cout<<round(usersRationalNumber)<<endl;
+        if ((usersRationalNumber < 0) && (usersRationalNumber - (int)usersRationalNumber) <= -0.5) {
+            if((int)usersRationalNumber <= -0.5) {
+            cout<< (int)usersRationalNumber - 1 <<endl;
+            }
+            else{
+            cout<< int(usersRationalNumber) <<endl;
+            }
+        }
+        else if((usersRationalNumber - (int)usersRationalNumber) >= 0.5) {
+            cout<< int(usersRationalNumber) + 1 <<endl;
+        }
+        else {
+            cout<< int(usersRationalNumber) <<endl;
+        }
         break;
     default:
         break;
