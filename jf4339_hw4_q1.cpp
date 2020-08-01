@@ -7,13 +7,23 @@ int main() {
     int usersInteger;
     cout << "Please enter a positive integer: ";
     cin >> usersInteger;
+    cout<<endl;
+    cout << "section a" << endl;
 
-    int numnerOfLoops = 1;
+    int numberOfLoops = 1;
     int evenNumber = 2;
-    while(usersInteger >= numnerOfLoops) {
+    while(usersInteger >= numberOfLoops) {
         cout << evenNumber << endl;
         evenNumber += 2;
-        numnerOfLoops++;
+        numberOfLoops++;
+    }
+
+    evenNumber = 2;
+    cout<<endl;
+    cout << "section b" << endl;
+    for(int i = 1; i <= usersInteger; i++) {
+        cout << evenNumber << endl;
+        evenNumber += 2;
     }
 
 }
