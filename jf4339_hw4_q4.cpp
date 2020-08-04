@@ -16,8 +16,22 @@ int main() {
         cin >> sequence;
         total *=sequence;
     }
-    cout << total << endl;
     double geometricMean = pow(total, 1.0/userSequenceLength);
+    cout << "The geometric mean is: " << geometricMean << endl;
 
+    //part b
+    int userSequenceLengthPartB, userSequenceB, totalB = 1;
+    cout << "Please enter a non-empty sequence of positive integers, each one in a separate line." 
+    << "End your sequence by typing -1: " << endl;
+    do {
+        cin >> userSequenceB;
+        if(userSequenceB != -1){
+            totalB *=userSequenceB;
+            userSequenceLengthPartB++;
+        }
+    } while (userSequenceB != -1);
+    
+    cout << totalB << endl;
+    geometricMean = pow(totalB, 1.0/userSequenceLengthPartB);
     cout << "The geometric mean is: " << geometricMean << endl;
 }
