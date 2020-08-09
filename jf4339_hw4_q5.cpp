@@ -9,7 +9,6 @@ int main() {
     cout << "Please enter a positive integer: ";
     cin >> usersInput;
 
-    usersInput *= 2;
     // top triangle
     for(int i=0; i < usersInput; i++) {
         for(int j=0; j < i; j++) {
@@ -19,18 +18,18 @@ int main() {
         for(int k = usersInput; k > i; k--) {
             cout << " *";
         }
-        cout<<endl;
+        cout << endl;
     }
 
     // bottom triangle
-    for(int i=0; i < usersInput; i++) {
-        for(int j=usersInput; j > i; j--) {
+    for(int i = 0; i < usersInput; i++) {
+        for(int j = usersInput; j > i; j--) {
             cout << " ";
          }
 
-        for(int k = 0; k < i; k++) {
-            cout << " *";
+        for(int k = -1; k < i; k++) {
+            cout << "* ";
         }
-        cout<<endl;
+        cout << endl;
     }
 }

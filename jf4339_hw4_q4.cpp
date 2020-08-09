@@ -5,7 +5,9 @@
 using namespace std;
 
 int main() {
-    // part a
+    
+    cout << "section a " << endl;
+
     int userSequenceLength;
     cout << "Please enter the length of the sequence: ";
     cin >> userSequenceLength;
@@ -19,7 +21,7 @@ int main() {
     double geometricMean = pow(total, 1.0/userSequenceLength);
     cout << "The geometric mean is: " << geometricMean << endl;
 
-    //part b
+    cout << "section b " << endl;
     int userSequenceLengthPartB, userSequenceB, totalB = 1;
     cout << "Please enter a non-empty sequence of positive integers, each one in a separate line." 
     << "End your sequence by typing -1: " << endl;
