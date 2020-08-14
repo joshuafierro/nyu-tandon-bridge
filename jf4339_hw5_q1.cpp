@@ -13,7 +13,7 @@ int main() {
     int userInput;
     cin >> userInput;
 
-    for (int i =1; i <= userInput; i++) {
+    for (int i = 1; i <= userInput; i++) {
         
         for(int j = 1; j <= userInput; j++) {
             cout << j * i;
