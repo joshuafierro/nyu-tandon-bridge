@@ -12,31 +12,37 @@ int main() {
 
     srand(time(0));
     int myRandomNumber = rand() % 100 + 1;
-    int attempts = 5;
-    bool gameOver;
+    int attemptsLeft = 5;
+    // bool gameOver;
+    int rangeX = 1;
+    int rangeY = 100;
+    cout << myRandomNumber <<endl;
 
+    cout<< "I thought of a number between " << rangeX << " and " << rangeY <<"!" <<endl;
     for(int i = 0; i < 5; i++){
-        cout<< "I thought of a number between 1 and 100! " <<
-        "Try to guess it. Range: [1, 100], Number of guesses left: " << attempts <<endl;
-        attempts--;
+        cout << "Try to guess it. Range: ["<<rangeX<<","<< rangeY<<"], Number of guesses left: " << attemptsLeft <<endl;
 
+        int numberOfGuesses = i + 1;
         int usersGuess;
         cin >> usersGuess;
 
-        if(attempts == 0) {
-            cout<< "Out of guesses! My number was " << myRandomNumber <<endl;
-        }
-        else if(usersGuess == myRandomNumber) {
-            cout<<"Congrats! YOU WIN!" <<endl;
+        if(usersGuess == myRandomNumber) {
+            cout<<"Congrats! You guessed my number in " << numberOfGuesses << " guesses" <<endl;
             break;
+        }
+        else if(attemptsLeft == 0) {
+            cout<< "Out of guesses! My number was " << myRandomNumber <<endl;
         }
         else if(usersGuess < myRandomNumber) {
             cout << "Your guess: " << usersGuess << endl;
             cout<< "Wrong! My number is bigger."<<endl;
+            rangeX = usersGuess + 1;
         }
         else if(usersGuess > myRandomNumber) {
             cout << "Your guess: " << usersGuess << endl;
             cout<< "Wrong! My number is smaller."<<endl;
+            rangeY = usersGuess - 1;
         }
+        attemptsLeft--;
     }
 }
