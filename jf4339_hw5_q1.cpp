@@ -17,7 +17,7 @@ int main() {
         
         for(int j = 1; j <= userInput; j++) {
             cout << j * i;
-            cout << "   ";
+            cout << "\t";
         }
         cout << endl;
     }
