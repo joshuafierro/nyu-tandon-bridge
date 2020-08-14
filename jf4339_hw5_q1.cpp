@@ -9,5 +9,16 @@ multiplication table. The columns should be spaced by a tab.
 */
 
 int main() {
+    cout<<"Please enter a positive integer:"<<endl;
+    int userInput;
+    cin >> userInput;
 
+    for (int i =1; i <= userInput; i++) {
+        
+        for(int j = 1; j <= userInput; j++) {
+            cout << j * i;
+            cout << "   ";
+        }
+        cout << endl;
+    }
 }
