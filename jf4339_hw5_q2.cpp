@@ -23,11 +23,20 @@ int main() {
         int usersGuess;
         cin >> usersGuess;
 
-        if(usersGuess == myRandomNumber) {
+        if(attempts == 0) {
+            cout<< "Out of guesses! My number was " << myRandomNumber <<endl;
+        }
+        else if(usersGuess == myRandomNumber) {
             cout<<"Congrats! YOU WIN!" <<endl;
             break;
         }
-        cout << "Your guess: " << usersGuess << endl;
-        cout<< "Wrong the number was " << myRandomNumber <<endl;
+        else if(usersGuess < myRandomNumber) {
+            cout << "Your guess: " << usersGuess << endl;
+            cout<< "Wrong! My number is bigger."<<endl;
+        }
+        else if(usersGuess > myRandomNumber) {
+            cout << "Your guess: " << usersGuess << endl;
+            cout<< "Wrong! My number is smaller."<<endl;
+        }
     }
 }
