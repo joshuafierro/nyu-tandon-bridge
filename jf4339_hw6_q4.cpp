@@ -4,10 +4,18 @@
 #include <cmath>
 using namespace std;
 
+/*
+ implementing a program that reads from the user a positive
+ integer (≥2), and prints all it’s divisors.
+*/
+
 void printDivisors(int num);
 
 int main(){
-    printDivisors(100);
+    cout<<"Please enter a positive integer >= 2: ";
+    int userInput;
+    cin>>userInput;
+    printDivisors(userInput);
     return 0;
 }
 
