@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cmath>
 using namespace std;
 
 double eApprox(int n);
@@ -14,5 +15,6 @@ int main(){
 }
 
 double eApprox(int n){
-    return 0.0;
+    // e = 2.71828
+    return pow((1.0 + 1.0/n), n);
 }
