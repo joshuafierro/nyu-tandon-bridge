@@ -34,10 +34,7 @@ int main()
 void printShiftedTriangle(int n, int m, char symbol){
 
     for(int i = 1; i <= n; i++){
-        
-        // for(int j = 0; j < m; j++){
-        //     cout<<"+";
-        // }
+
         for(int k = 1; k <= (n-i) + m; k++){
             cout<<" ";
         }
