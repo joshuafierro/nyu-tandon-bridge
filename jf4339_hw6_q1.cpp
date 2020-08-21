@@ -10,6 +10,17 @@ using namespace std;
             num’s elements in the Fibonacci sequence.
     */
 
+int fib(int n);
+
+int main(){
+    int userInput;
+    cout<< "Please enter a positive integer: ";
+    cin >> userInput;
+
+    cout<<"Recieved: " << fib(userInput)<<endl; 
+    return 0;
+}
+
 int fib(int n){
 
     int index1 = 1, index2 = 1, element;
@@ -24,13 +35,4 @@ int fib(int n){
         }
         return element;
     }
-}
-
-int main(){
-    int userInput;
-    cout<< "Please enter a positive integer: ";
-    cin >> userInput;
-
-    cout<<"Recieved: " << fib(userInput)<<endl; 
-    return 0;
 }
