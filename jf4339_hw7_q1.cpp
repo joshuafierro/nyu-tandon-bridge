@@ -23,9 +23,11 @@ bool isLeapYear(int year);
 int main(){
     int year, startingDay;
     cout<<"Please enter the year and day of the week " << 
-    "you would like to start on (Example: 1 is Monday, 2 is Tuesday etc.): " <<endl;
+    "you would like to start on"<<endl;
+    cout<<"(Example: 1 is Monday, 2 is Tuesday etc.): " <<endl;
     
     cin>> year >> startingDay;
+    cout<<endl;
     printYearCalendar(year, startingDay);
 
     return 0;
@@ -65,11 +67,7 @@ return false otherwise.
 
 bool isLeapYear(int year){
     cout<<year % 4<<endl;
-    if((year % 4 == 0) || (year % 400 == 0)){
-        cout<<"true"<<endl;
-        return true;
-    }
-    else if((year % 400 == 0) && (year % 100 == 0)){
+    if((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)){
         cout<<"true"<<endl;
         return true;
     }
@@ -95,7 +93,7 @@ followed by the year (e.g. March 2016).
 void printYearCalendar(int year, int startingDay) {
     int daysInMonth;
 
-    for(int i = 0; i <= 12; i ++){
+    for(int i = 1; i <= 12; i ++){
         switch (i)
         {
         case 1:
@@ -155,7 +153,8 @@ void printYearCalendar(int year, int startingDay) {
         default:
             break;
         }
-        printMonthCalendar(daysInMonth, startingDay);
+        int lastDayInMonth = printMonthCalendar(daysInMonth, startingDay);
+        startingDay = lastDayInMonth++;
     }
     
 
