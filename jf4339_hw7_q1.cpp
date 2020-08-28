@@ -93,51 +93,69 @@ followed by the year (e.g. March 2016).
 */
 
 void printYearCalendar(int year, int startingDay) {
+    int daysInMonth;
 
-    for(int i = 0; i < 12; i ++){
+    for(int i = 0; i <= 12; i ++){
         switch (i)
         {
         case 1:
             cout<<"Januray " << year <<endl;
+            daysInMonth = 31;
             break;
         case 2:
             cout<<"February " << year <<endl;
+            if (isLeapYear(year)){
+                daysInMonth = 29;
+            }
+            else{
+                daysInMonth = 28;
+            }
             break;
         case 3:
             cout<<"March " << year <<endl;
+            daysInMonth = 31;
             break;
         case 4:
             cout<<"April " << year <<endl;
+            daysInMonth = 30;
             break;
         case 5:
             cout<<"May " << year <<endl;
+            daysInMonth = 31;
             break;
         case 6:
             cout<<"June " << year <<endl;
+            daysInMonth = 30;
             break;
         case 7:
             cout<<"July " << year <<endl;
+            daysInMonth = 31;
             break;
         case 8:
             cout<<"August " << year <<endl;
+            daysInMonth = 31;
             break;
         case 9:
             cout<<"September " << year <<endl;
+            daysInMonth = 30;
             break;
         case 10:
             cout<<"October " << year <<endl;
+            daysInMonth = 31;
             break;
         case 11:
             cout<<"November " << year <<endl;
+            daysInMonth = 30;
             break;
         case 12:
             cout<<"December " << year <<endl;
+            daysInMonth = 31;
             break;
         
         default:
             break;
         }
-        printMonthCalendar(31, startingDay);
+        printMonthCalendar(daysInMonth, startingDay);
     }
     
 
