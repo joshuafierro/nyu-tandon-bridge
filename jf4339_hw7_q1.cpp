@@ -16,16 +16,19 @@ Print a formatted monthly calendar of that month
 Return a number 1-7 that represents the day in the week of the last day in that 
 */
 
-int printMonthCalender(int numOfDays, int startingDay);
+int printMonthCalendar(int numOfDays, int startingDay);
+void printYearCalendar(int year, int startingDay);
+bool isLeapYear(int year);
 
 int main(){
     int numOfDays, startingDay;
     cin>> numOfDays >> startingDay;
-    printMonthCalender(numOfDays, startingDay);
+    printMonthCalendar(numOfDays, startingDay);
+    
     return 0;
 }
 
-int printMonthCalender(int numOfDays, int startingDay) {
+int printMonthCalendar(int numOfDays, int startingDay) {
     cout<<"Mon \t Tue \t Wed \t Thr \t Fri \t Sat \t Sun"<<endl;
     int dayOfWeek = startingDay;
     for(int i = 1; i <= startingDay; i++ ){
@@ -48,9 +51,46 @@ int printMonthCalender(int numOfDays, int startingDay) {
     return dayOfWeek;
 }
 
-void myFunction(int numOfTabs){
-    while(numOfTabs > 0){
-        cout<<"\t"<<endl;
-        numOfTabs--;
+/*
+A method for determining if a year is a leap year in the Gregorian calendar system 
+is to check if it is divisible by 4 but not by 100, unless it is also divisible by 400.
+
+For example, 1896, 1904, and 2000 were leap years but 1900 was not.
+Write a function that takes in a year as input and return true if the year is a leap year, 
+return false otherwise.
+*/
+
+bool isLeapYear(int year){
+    cout<<year % 4<<endl;
+    if((year % 4 == 0) || (year % 400 == 0)){
+        cout<<"true"<<endl;
+        return true;
     }
+    else if((year % 400 == 0) && (year % 100 == 0)){
+        cout<<"true"<<endl;
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+/*
+Implement a function:
+void printYearCalender(int year, int startingDay)
+This function is given two parameters:
+year – an integer that represents a year (e.g. 2016)
+startingDay – a number 1-7 that represents the day in the week of 1/1 in that
+year (1 for Monday, 2 for Tuesday, 3 for Wednesday, etc.).
+ 
+The function should use the functions from sections (a) and (b) in order to print a
+formatted yearly calendar of that year.
+Formatting Note: As the header for each month you should print the months’ name
+followed by the year (e.g. March 2016).
+*/
+
+void printYearCalendar(int year, int startingDay) {
+
+    int printMonthCalendar(int numOfDays, int startingDay);
+
 }
