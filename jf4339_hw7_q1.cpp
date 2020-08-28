@@ -26,15 +26,26 @@ int main(){
 }
 
 int printMonthCalender(int numOfDays, int startingDay) {
-    cout<<"Mon \t Tues \t Wed \t Thurs \t Fri \t Sat \t Sun"<<endl;
-    for(int i = 1; i <= numOfDays; i++ ){
-        if (i % 7 == 0){
-            cout<<endl;
+    cout<<"Mon \t Tue \t Wed \t Thr \t Fri \t Sat \t Sun"<<endl;
+    int dayOfWeek = startingDay;
+    for(int i = 1; i <= startingDay; i++ ){
+        if(i < startingDay){
+            cout<<"\t";
         }
+    }
+
+    for(int i =1; i <= numOfDays; i ++){
         cout<<i << "\t";
+        
+        if (dayOfWeek % 7 == 0){
+            cout<<endl;
+            dayOfWeek = 0;
+        }
+        dayOfWeek++;
     }
     cout<<endl;
-    return numOfDays;
+    cout<<dayOfWeek<<endl;
+    return dayOfWeek;
 }
 
 void myFunction(int numOfTabs){
