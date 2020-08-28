@@ -21,10 +21,13 @@ void printYearCalendar(int year, int startingDay);
 bool isLeapYear(int year);
 
 int main(){
-    int numOfDays, startingDay;
-    cin>> numOfDays >> startingDay;
-    printMonthCalendar(numOfDays, startingDay);
+    int year, startingDay;
+    cout<<"Please enter the year and day of the week " << 
+    "you would like to start on (Example: 1 is Monday, 2 is Tuesday etc.): " <<endl;
     
+    cin>> year >> startingDay;
+    printYearCalendar(year, startingDay);
+
     return 0;
 }
 
@@ -47,7 +50,7 @@ int printMonthCalendar(int numOfDays, int startingDay) {
         dayOfWeek++;
     }
     cout<<endl;
-    cout<<dayOfWeek<<endl;
+    cout<<endl;
     return dayOfWeek;
 }
 
@@ -91,6 +94,51 @@ followed by the year (e.g. March 2016).
 
 void printYearCalendar(int year, int startingDay) {
 
-    int printMonthCalendar(int numOfDays, int startingDay);
+    for(int i = 0; i < 12; i ++){
+        switch (i)
+        {
+        case 1:
+            cout<<"Januray " << year <<endl;
+            break;
+        case 2:
+            cout<<"February " << year <<endl;
+            break;
+        case 3:
+            cout<<"March " << year <<endl;
+            break;
+        case 4:
+            cout<<"April " << year <<endl;
+            break;
+        case 5:
+            cout<<"May " << year <<endl;
+            break;
+        case 6:
+            cout<<"June " << year <<endl;
+            break;
+        case 7:
+            cout<<"July " << year <<endl;
+            break;
+        case 8:
+            cout<<"August " << year <<endl;
+            break;
+        case 9:
+            cout<<"September " << year <<endl;
+            break;
+        case 10:
+            cout<<"October " << year <<endl;
+            break;
+        case 11:
+            cout<<"November " << year <<endl;
+            break;
+        case 12:
+            cout<<"December " << year <<endl;
+            break;
+        
+        default:
+            break;
+        }
+        printMonthCalendar(31, startingDay);
+    }
+    
 
 }
