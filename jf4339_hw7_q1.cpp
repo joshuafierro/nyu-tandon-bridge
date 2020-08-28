@@ -3,19 +3,6 @@
 #include <vector>
 using namespace std;
 
-/*
-Implement a function:
-int printMonthCalender(int numOfDays, int startingDay)
-This function is given two parameters:
-numOfDays - The number of days in the month
-startingDay – a number 1-7 that represents the day in the week of the first day
-in that month (1 for Monday, 2 for Tuesday, 3 for Wednesday, etc.).
- 
-The function should:
-Print a formatted monthly calendar of that month
-Return a number 1-7 that represents the day in the week of the last day in that 
-*/
-
 int printMonthCalendar(int numOfDays, int startingDay);
 void printYearCalendar(int year, int startingDay);
 bool isLeapYear(int year);
@@ -33,8 +20,21 @@ int main(){
     return 0;
 }
 
+/*
+Implement a function:
+int printMonthCalender(int numOfDays, int startingDay)
+This function is given two parameters:
+numOfDays - The number of days in the month
+startingDay – a number 1-7 that represents the day in the week of the first day
+in that month (1 for Monday, 2 for Tuesday, 3 for Wednesday, etc.).
+ 
+The function should:
+Print a formatted monthly calendar of that month
+Return a number 1-7 that represents the day in the week of the last day in that 
+*/
+
 int printMonthCalendar(int numOfDays, int startingDay) {
-    cout<<"Mon \t Tue \t Wed \t Thr \t Fri \t Sat \t Sun"<<endl;
+    cout<<"Mon\tTue\tWed\tThr\tFri\t Sat\tSun"<<endl;
     int dayOfWeek = startingDay;
     for(int i = 1; i <= startingDay; i++ ){
         if(i < startingDay){
@@ -66,9 +66,7 @@ return false otherwise.
 */
 
 bool isLeapYear(int year){
-    cout<<year % 4<<endl;
     if((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)){
-        cout<<"true"<<endl;
         return true;
     }
     else{
