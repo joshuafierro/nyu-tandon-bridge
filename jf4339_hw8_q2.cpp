@@ -7,8 +7,14 @@ bool isPalindrome(string str);
 
 int main(){
     string userInput;
+    cout<<"Please enter a word: ";
     cin >> userInput;
-    isPalindrome(userInput);
+    if(isPalindrome(userInput)){
+        cout<< userInput << " is a palindrome"<<endl;
+    }
+    else{
+        cout<< userInput << " is NOT a palindrome"<<endl;
+    }
     return 0;
 }
 
@@ -23,8 +29,6 @@ bool isPalindrome(string str){
     string reversedStr(str);
     reverse(reversedStr.begin(), reversedStr.end());
     if (str == reversedStr){
-        cout<< str << " " << reversedStr<<endl; 
-        cout<<"TRUE"<<endl;
         return true;
     }
     return false;
