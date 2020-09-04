@@ -5,6 +5,7 @@ using namespace std;
 
 static int SIZE_OF_ARRAY = 20;
 int minInArray(int arr[], int arrSize);
+void whereNumAppears(int num, int arr[]);
 
 int main(){
     int numbers[SIZE_OF_ARRAY];
@@ -16,7 +17,9 @@ int main(){
         numbers[i] = userInput;
     }
     int answer = minInArray(numbers, SIZE_OF_ARRAY);
-    cout<<"The minimum value is "<<answer<<endl;
+    cout<<"The minimum value is "<<answer<<", and it is located in the following indices: ";
+    whereNumAppears(answer, numbers);
+    cout<<endl;
     return 0;
 }
 
@@ -33,4 +36,12 @@ int minInArray(int arr[], int arrSize){
         }
     }
     return min;
+}
+
+void whereNumAppears(int num, int arr[]){
+    for (int i = 0; i < arr[SIZE_OF_ARRAY - 1]; i++){
+        if(arr[i] == num){
+            cout<<i<<" ";
+        }
+    }
 }
