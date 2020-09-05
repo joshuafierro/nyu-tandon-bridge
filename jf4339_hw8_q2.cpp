@@ -19,8 +19,6 @@ int main(){
 }
 
 /*
-Implement a function:
-bool isPalindrome(string str)
 This function is given a string str containing a word, and returns true if and only if str is
 a palindrome.
 */

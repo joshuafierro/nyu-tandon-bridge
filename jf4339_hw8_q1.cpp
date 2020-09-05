@@ -24,7 +24,6 @@ int main(){
 }
 
 /*
-Implement the function: int minInArray(int arr[], int arrSize)
 This function is given arr, an array of integers, and its logical size, arrSize. 
 When called, it returns the minimum value in arr.
 */
@@ -38,6 +37,10 @@ int minInArray(int arr[], int arrSize){
     return min;
 }
 
+/*
+This function prints out the index or indicies from which the given number (num)
+appears in an array.
+*/
 void whereNumAppears(int num, int arr[]){
     for (int i = 0; i < arr[SIZE_OF_ARRAY - 1]; i++){
         if(arr[i] == num){
