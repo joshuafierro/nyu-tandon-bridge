@@ -22,6 +22,7 @@ the number of occurrences of each letter in alphabetical order.
 void numOfWordsAndLetters(string line){
     int wordCount = 1;
     vector<char> letters;
+    int numOfLetter[26];
 
     for (int i = 0; i < line.length(); i++){
         if(line[i] == ' '){
@@ -36,6 +37,7 @@ void numOfWordsAndLetters(string line){
     }
 
     cout<<wordCount << "\t" <<"words"<<endl;
+    sort(letters.begin(), letters.end());
     for(auto letter : letters){
         cout<<letter<<endl;
     }
