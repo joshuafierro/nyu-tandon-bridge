@@ -21,13 +21,23 @@ the number of occurrences of each letter in alphabetical order.
 */
 void numOfWordsAndLetters(string line){
     int wordCount = 1;
+    vector<char> letters;
 
     for (int i = 0; i < line.length(); i++){
         if(line[i] == ' '){
             wordCount++;
         }
+
+        if(isalpha(line[i]) && line[i] != ' '){
+            // if char exists in arry then just increment 
+            // if(any_of(line[i]))
+            letters.push_back(line[i]);
+        }
     }
 
-    cout<<wordCount<<endl;
+    cout<<wordCount << "\t" <<"words"<<endl;
+    for(auto letter : letters){
+        cout<<letter<<endl;
+    }
     
 }
