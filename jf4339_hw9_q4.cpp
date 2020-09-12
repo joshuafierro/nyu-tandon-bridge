@@ -6,6 +6,9 @@ using namespace std;
 void oddsKeepEvensFlip(int arr[], int arrSize);
 
 int main(){
+    int userInput[6] = {5,2,11,7,6,4};
+    int arraySize = sizeof(userInput)/sizeof(userInput[0]);
+    oddsKeepEvensFlip(userInput, arraySize);
     return 0;
 }
 
@@ -19,4 +22,25 @@ When called, it will reorder the elements of arr so that:
 */
 void oddsKeepEvensFlip(int arr[], int arrSize){
 
+    vector<int> oddNums;
+    vector<int> evenNums;
+    vector<int> combinedNumArray;
+
+    for(int i = 0; i < arrSize; i++ ){
+        if(arr[i] % 2 != 0){
+            oddNums.push_back(arr[i]);
+        }
+        else if(arr[i] % 2 == 0){
+            evenNums.push_back(arr[i]);
+        }
+    }
+
+    for(int num : oddNums){
+        cout<<num<<endl;
+        combinedNumArray.push_back(num);
+    }
+    for(int i = evenNums.size() - 1; i >= 0; i--){
+        cout<<evenNums[i]<<endl;
+        combinedNumArray.push_back(evenNums[i]);
+    }
 }
