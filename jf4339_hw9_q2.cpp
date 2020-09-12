@@ -10,10 +10,10 @@ int main() {
     string firstSentenceEntered;
     string secondSentenceEntered;
  
-    cout << "Find out if two sentences are anagrams." << endl;
-    cout << "Enter the first sentence: ";
+    cout << "Check if two strings are anagrams." << endl;
+    cout << "Please enter the first string: ";
     getline(cin, firstSentenceEntered);
-    cout << "Enter the second sentence: ";
+    cout << "Now enter the second string: ";
     getline(cin, secondSentenceEntered);
  
  
