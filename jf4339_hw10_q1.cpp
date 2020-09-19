@@ -4,13 +4,18 @@
 using namespace std;
 
 string* createWordsArray(string sentence, int& outWordsArrSize);
+void printArray(string* arr, int arrSize);
 
 int main(){
     string userInput;
     int outWordsArrSize = 0;
+    string* sentenceArr;
+
+    cout<<"Please provide a sentence:"<<endl;
     getline(cin, userInput);
-    createWordsArray(userInput, outWordsArrSize);
-    cout<<outWordsArrSize<<endl;
+    sentenceArr = createWordsArray(userInput, outWordsArrSize);
+    printArray(sentenceArr, outWordsArrSize);
+
     return 0;
 }
 
@@ -21,23 +26,39 @@ The function also updates the output parameter, outWordsArrSize,
 with the logical size of the new array that was created.
 */
 string* createWordsArray(string sentence, int& outWordsArrSize){
-    vector<string> wordsArray;
-    string word = "";
-    for(auto x : sentence){
-        if(x == ' '){
-            // cout<<word<<endl;
-            wordsArray.push_back(word);
-            word ="";
+    string* wordsArray = new string [1];
+    string word;
+    int wordCount = 0;
+    int newArrSize = 1;
+    int sentenceLength = sentence.length();
+    
+    for(int i = 0; i <= sentenceLength; i++){
+        if(sentence[i] == ' ' || sentence[i] == '\0'){
+            if(wordCount > 0){
+                string* linesArr;
+                linesArr = new string[newArrSize*2];
+                for(int i = 0; i < wordCount; i++){
+                    linesArr[i] = wordsArray[i];
+                }
+                delete []wordsArray;
+                wordsArray = linesArr;
+                newArrSize *= 2;
+            }
+            wordsArray[wordCount] = word;
+            wordCount++;
+            word = "";
         }
         else{
-            word += x;
+            word += sentence[i];
         }
     }
-    wordsArray.push_back(word);
-    for(int i = 0; i < wordsArray.size(); i++){
-        cout<<wordsArray[i]<<endl;
-    }
+    outWordsArrSize = wordCount;
+    return wordsArray;
+}
 
-    outWordsArrSize = wordsArray.size();
-    // return wordsArray;
+void printArray(string* arr, int arrSize){
+    cout<<"The new array has a size of " << arrSize << " and contains: "<<endl;
+    for(int i = 0; i < arrSize; i++){
+        cout<<arr[i]<<endl;
+    }
 }
